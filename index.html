@@ -132,46 +132,42 @@
 </section>
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            The tie-knotting task is highly challenging due to the tie's high deformation and long-horizon manipulation actions. 
-            This work presents TieBot, a Real-to-Sim-to-Real learning from visual demonstration system
-            for the robots to learn to knot a tie. We introduce the Hierarchical Feature Matching approach 
-            to estimate a sequence of tie's meshes from the demonstration video. With these estimated meshes used as subgoals, 
-            we first learn a teacher policy using privileged information. 
-            Then, we learn a student policy with point cloud observation by imitating teacher policy. 
-            Lastly, our pipeline learns a residual policy when the learned policy is applied to real-world execution, 
-            mitigating the Sim2Real gap. 
-            We demonstrate the effectiveness of TieBot in simulation and the real world. 
-            In the real-world experiment, a dual-arm robot successfully knots a tie, achieving 50% success rate among 10 trials. 
-          </p>
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The tie-knotting task is highly challenging due to the tie's high deformation and long-horizon manipulation actions. 
+              This work presents TieBot, a Real-to-Sim-to-Real learning from visual demonstration system
+              for the robots to learn to knot a tie. We introduce the Hierarchical Feature Matching approach 
+              to estimate a sequence of tie's meshes from the demonstration video. With these estimated meshes used as subgoals, 
+              we first learn a teacher policy using privileged information. 
+              Then, we learn a student policy with point cloud observation by imitating teacher policy. 
+              Lastly, our pipeline learns a residual policy when the learned policy is applied to real-world execution, 
+              mitigating the Sim2Real gap. 
+              We demonstrate the effectiveness of TieBot in simulation and the real world. 
+              In the real-world experiment, a dual-arm robot successfully knots a tie, achieving 50% success rate among 10 trials. 
+            </p>
+          </div>
         </div>
-        <h2 class="title is-3">Video Summary</h2>
-        <video id="towel" controls playsinline height="100%">
-          <source src="./static/videos/video_summary.mp4"
-                  type="video/mp4">
-        </video>
       </div>
+      <!--/ Abstract. -->
+          
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video Summary</h2>
+          <video id="towel" controls playsinline height="100%">
+            <source src="./static/videos/video_summary.mp4"
+                    type="video/mp4">
+          </video>
+      </div>
+      <!--/ Paper video. -->
     </div>
-    <!--/ Abstract. -->
-
-    <!-- TODO: Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
@@ -240,7 +236,10 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-3">Examples of Local Feature Matching</h2>
+    <h2 class="title is-3">Local Feature Matching</h2>
+    <p>
+      We use <i>LoFTr</i> to build feature matching between two consecutive images. Here are some examples of feature matching results.
+    </p>
     <h2 class="title is-4">First tie-knotting task</h2>
     <div id="results-carousel" class="carousel results-carousel">
       <div class="item item-steve">
@@ -347,7 +346,11 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-3">Examples of Keypoints Detection</h2>
+    <h2 class="title is-3">Keypoints Detection</h2>
+    <p>
+      In our Real2Sim pipeline, we use existing estimated results to train keypoints detection model. Here we illustrate several detection results.
+      The blue arrow is the predicted z-axis. The green arrow is the predicted x-axis.
+    </p>
     <h2 class="title is-4">First tie-knotting task</h2>
     <div id="results-carousel" class="carousel results-carousel">
       <div class="item item-steve">
@@ -426,7 +429,11 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-3">Examples of Real2Sim Results</h2>
+    <h2 class="title is-3">Real2Sim Results</h2>
+    <p>
+      Here we show several estimated meshes using our Real2Sim pipeline. The first and third columns are point clouds extracted from human demonstration video,
+      and the second and forth columns are estimated meshes.
+    </p>
     <h2 class="title is-4">First tie-knotting task</h2>
     <!-- Use it like any other HTML element -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
@@ -1040,9 +1047,13 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Paper video. -->
+    <h2 class="title is-3">Real-World Experiment</h2>
+    <p>
+      We test our real-world policy 10 times. 
+      Each time the initial positions of the tie are slightly perturbed about 5cm. The final success rate is 50%.
+    </p>
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Real-World Experiment</h2>
         <video id="towel" controls playsinline height="100%">
           <source src="./static/videos/real_exp.mp4"
                   type="video/mp4">
